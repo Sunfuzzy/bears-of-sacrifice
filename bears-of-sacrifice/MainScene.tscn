@@ -90,3 +90,46 @@ position = Vector2(14, -11)
 
 [node name="Node2D" parent="Player" instance=ExtResource("5_rf2cd")]
 position = Vector2(-105, 162)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(14, -11)
+
+[node name="Node2D" parent="Player" instance=ExtResource("5_rf2cd")]
+position = Vector2(-105, 162)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(14, -11)
+
+[node name="Node2D" parent="Player" instance=ExtResource("5_rf2cd")]
+position = Vector2(-105, 162)
+
+script = ExtResource("5_rf2cd")
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(52.4, 480.00012)
+script = ExtResource("3_rf2cd")
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+position = Vector2(-64, -480)
+anchor_mode = 0
+editor_draw_drag_margin = true
+script = ExtResource("5_rf2cd")
+
+[node name="Player3" type="CharacterBody2D" parent="."]
+position = Vector2(33.2, 480.00012)
+script = ExtResource("3_rf2cd")
+
+[node name="Camera2D" type="Camera2D" parent="Player3"]
+position = Vector2(-64, -480)
+anchor_mode = 0
+editor_draw_drag_margin = true
+script = ExtResource("5_rf2cd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Characters left: 3"
+
+[connection signal="level_complete" from="Goal" to="." method="_on_goal_level_complete"]
