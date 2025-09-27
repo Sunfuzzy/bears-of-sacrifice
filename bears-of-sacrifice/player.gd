@@ -5,16 +5,20 @@ extends CharacterBody2D
 @export var gravity: int = 800
 
 var is_alive: bool = true
+var is_active: bool = false   # multiple characters: only one moves
 
 func _physics_process(delta):
 	if not is_alive:
+		return
+	if not is_active:
+		velocity = Vector2.ZERO
 		return
 
 	# Horizontal input
 	var input_dir = Input.get_axis("move_left", "move_right")
 	velocity.x = input_dir * speed
 
-	# Gravity
+	# Gravity + jumping
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
@@ -24,7 +28,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("sacrifice") and is_alive:
+	if event.is_action_pressed("sacrifice") and is_alive and is_active:
 		do_sacrifice()
 
 func do_sacrifice():
@@ -34,4 +38,5 @@ func do_sacrifice():
 	get_parent().add_child(bridge)
 
 	is_alive = false
+	emit_signal("sacrificed", self)   # tell MainScene this player is gone
 	queue_free()
