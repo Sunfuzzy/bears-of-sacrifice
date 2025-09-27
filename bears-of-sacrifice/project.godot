@@ -15,6 +15,11 @@ run/main_scene="uid://bcaqkfaajcuth"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=90
+window/size/viewport_height=60
+
 [input]
 
 right={
