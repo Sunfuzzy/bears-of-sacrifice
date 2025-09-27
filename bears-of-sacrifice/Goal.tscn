@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://sqdyvpvs8lo4"]
+[gd_scene load_steps=3 format=3 uid="uid://15040yjkjb0e"]
 
-[ext_resource type="Script" path="res://Goal.gd" id="1_py4ba"]
+[ext_resource type="Script" uid="uid://c1ytm2a33rlx2" path="res://Goal.gd" id="1_py4ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sep42"]
 
@@ -8,7 +8,7 @@
 audio_bus_override = true
 script = ExtResource("1_py4ba")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sep42")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
