@@ -19,8 +19,8 @@ window/size/viewport_height=576
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=576
+window/size/viewport_width=900
+window/size/viewport_height=600
 
 [input]
 
@@ -52,3 +52,4 @@ sacrifice={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.5019608, 0.84705883, 1, 1)
