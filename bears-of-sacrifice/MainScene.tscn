@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mnh87oq4wjnn"]
+[gd_scene load_steps=7 format=3 uid="uid://mnh87oq4wjnn"]
 
 [ext_resource type="Script" uid="uid://bcjyyf6x1d1xb" path="res://MainScene.gd" id="1_rf2cd"]
 [ext_resource type="Script" uid="uid://se12v6d07rfn" path="res://Player.gd" id="3_rf2cd"]
 [ext_resource type="Script" uid="uid://c1ytm2a33rlx2" path="res://Goal.gd" id="4_5crlr"]
 [ext_resource type="Texture2D" uid="uid://djvycp26a381y" path="res://istockphoto-1135769825-612x612.jpg" id="5_hbc2u"]
+[ext_resource type="Script" uid="uid://b2fg0thaais8i" path="res://Camera2D.gd" id="5_rf2cd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_torvr"]
 size = Vector2(32, 32)
@@ -29,6 +30,7 @@ script = ExtResource("3_rf2cd")
 position = Vector2(-64, -480)
 anchor_mode = 0
 editor_draw_drag_margin = true
+script = ExtResource("5_rf2cd")
 
 [node name="Player2" type="CharacterBody2D" parent="."]
 position = Vector2(52.4, 480.00012)
@@ -38,6 +40,7 @@ script = ExtResource("3_rf2cd")
 position = Vector2(-64, -480)
 anchor_mode = 0
 editor_draw_drag_margin = true
+script = ExtResource("5_rf2cd")
 
 [node name="Player3" type="CharacterBody2D" parent="."]
 position = Vector2(33.2, 480.00012)
@@ -47,6 +50,7 @@ script = ExtResource("3_rf2cd")
 position = Vector2(-64, -480)
 anchor_mode = 0
 editor_draw_drag_margin = true
+script = ExtResource("5_rf2cd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
