@@ -1,10 +1,10 @@
-
-[gd_scene load_steps=13 format=4 uid="uid://mnh87oq4wjnn"]
+[gd_scene load_steps=14 format=4 uid="uid://mnh87oq4wjnn"]
 
 [ext_resource type="Texture2D" uid="uid://ddux61dolqj7t" path="res://pixil-frame-0-22.png" id="1_uxrcv"]
 [ext_resource type="Texture2D" uid="uid://ctxlad7ge6jta" path="res://pixil-frame-0-25.png" id="2_rf2cd"]
 [ext_resource type="Texture2D" uid="uid://dpwbdfvb7u0s0" path="res://pixil-frame-0-26.png" id="3_a814b"]
 [ext_resource type="Texture2D" uid="uid://boy7jxxk8hi20" path="res://pixil-frame-0-27.png" id="4_5crlr"]
+[ext_resource type="PackedScene" uid="uid://bqw6givd1uxlp" path="res://Player.tscn" id="5_rf2cd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf2cd"]
 texture = ExtResource("4_5crlr")
@@ -80,13 +80,28 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAACAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_hbc2u")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(14, -11)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(14, -11)
 anchor_mode = 0
 editor_draw_drag_margin = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(14, -11)
+
+[node name="Node2D" parent="Player" instance=ExtResource("5_rf2cd")]
+position = Vector2(-105, 162)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(14, -11)
+
+[node name="Node2D" parent="Player" instance=ExtResource("5_rf2cd")]
+position = Vector2(-105, 162)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(14, -11)
+
+[node name="Node2D" parent="Player" instance=ExtResource("5_rf2cd")]
+position = Vector2(-105, 162)
 
 script = ExtResource("5_rf2cd")
 
