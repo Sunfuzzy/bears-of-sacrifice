@@ -54,3 +54,5 @@ editor_draw_drag_margin = true
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Characters left: 3"
+
+[connection signal="level_complete" from="Goal" to="." method="_on_goal_level_complete"]

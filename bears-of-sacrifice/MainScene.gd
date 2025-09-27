@@ -30,3 +30,37 @@ func switch_player():
 
 func update_ui():
 	char_label.text = "Characters left: %d" % players.size()
+
+
+func _on_goal_level_complete() -> void:
+	pass # Replace with function body.
+func _on_Goal_level_complete():
+	# Pysäytä peli
+	get_tree().paused = true
+
+	# Luo tausta
+	var panel = ColorRect.new()
+	panel.color = Color(0, 0, 0, 0.7) # läpinäkyvä musta
+	panel.set_anchors_preset(Control.PRESET_FULL_RECT)
+	add_child(panel)
+
+	# Luo teksti
+	var win_label = Label.new()
+	win_label.text = "YOU WIN!"
+	win_label.add_theme_font_size_override("font_size", 64)
+	win_label.set_anchors_preset(Control.PRESET_CENTER)
+	win_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	win_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	panel.add_child(win_label)
+
+	# Luo restart-nappi
+	var restart_button = Button.new()
+	restart_button.text = "Restart"
+	restart_button.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+	restart_button.offset_bottom = -50
+	panel.add_child(restart_button)
+
+	restart_button.connect("pressed", Callable(self, "_on_restart_pressed"))
+func _on_restart_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
