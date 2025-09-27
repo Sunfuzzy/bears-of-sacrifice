@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6iud1gjc8wvn"]
+
+[ext_resource type="Script" uid="uid://cu7cgys8bug0p" path="res://Spike.gd" id="1_fgk57"]
+[ext_resource type="Texture2D" uid="uid://dk4yvo10skwby" path="res://lataus.png" id="2_35xt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00c64"]
+
+[node name="Spike" type="StaticBody2D"]
+script = ExtResource("1_fgk57")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(182, 334)
+texture = ExtResource("2_35xt7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_00c64")
+
+[node name="KillZone" type="Area2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/KillZone"]
+shape = SubResource("RectangleShape2D_00c64")
