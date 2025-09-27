@@ -26,3 +26,7 @@ func switch_player():
 		return
 	current_index = (current_index + 1) % players.size()
 	current_player = players[current_index]
+@onready var char_label = $CanvasLayer/Label
+
+func update_ui():
+	char_label.text = "Characters left: %d" % players.size()
