@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=4 uid="uid://mnh87oq4wjnn"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://mnh87oq4wjnn"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=10 format=3 uid="uid://mnh87oq4wjnn"]
 >>>>>>> Stashed changes
@@ -8,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ctxlad7ge6jta" path="res://pixil-frame-0-25.png" id="2_rf2cd"]
 [ext_resource type="Texture2D" uid="uid://dpwbdfvb7u0s0" path="res://pixil-frame-0-26.png" id="3_a814b"]
 [ext_resource type="Texture2D" uid="uid://boy7jxxk8hi20" path="res://pixil-frame-0-27.png" id="4_5crlr"]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf2cd"]
@@ -72,10 +77,33 @@ texture = ExtResource("4_5crlr")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rpqi1"]
+=======
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbc2u"]
+texture = ExtResource("1_uxrcv")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_torvr"]
+texture = ExtResource("2_rf2cd")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xkvn"]
+texture = ExtResource("3_a814b")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5x2j"]
+texture = ExtResource("4_5crlr")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rpqi1"]
+>>>>>>> Stashed changes
 sources/0 = SubResource("TileSetAtlasSource_hbc2u")
 sources/2 = SubResource("TileSetAtlasSource_torvr")
 sources/3 = SubResource("TileSetAtlasSource_8xkvn")
 sources/4 = SubResource("TileSetAtlasSource_p5x2j")
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="MainScene" type="Node2D"]
@@ -122,6 +150,9 @@ layer_0/tile_data = PackedInt32Array(11993170, 1, 0, 12058706, 1, 1, 12124242, 1
 [node name="Player" type="CharacterBody2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 anchor_mode = 0
 editor_draw_drag_margin = true
