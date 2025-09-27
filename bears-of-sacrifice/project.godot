@@ -52,3 +52,4 @@ sacrifice={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.5019608, 0.84705883, 1, 1)
