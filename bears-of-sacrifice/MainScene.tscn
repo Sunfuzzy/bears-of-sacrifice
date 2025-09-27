@@ -6,6 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://boy7jxxk8hi20" path="res://pixil-frame-0-27.png" id="4_5crlr"]
 [ext_resource type="Texture2D" uid="uid://djsi2ndh251pd" path="res://pixil-frame-0-3.png" id="5_rf2cd"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a814b"]
+texture = ExtResource("5_rf2cd")
+texture_region_size = Vector2i(60, 75)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -37.5, 30, -37.5, 30, 37.5, -30, 37.5)
+
+[sub_resource type="TileSet" id="TileSet_5crlr"]
+tile_size = Vector2i(60, 75)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_a814b")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf2cd"]
 texture = ExtResource("4_5crlr")
 texture_region_size = Vector2i(30, 30)
@@ -50,18 +61,14 @@ tile_size = Vector2i(30, 30)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5crlr")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a814b"]
-texture = ExtResource("5_rf2cd")
-texture_region_size = Vector2i(60, 75)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -37.5, 30, -37.5, 30, 37.5, -30, 37.5)
-
-[sub_resource type="TileSet" id="TileSet_5crlr"]
-tile_size = Vector2i(60, 75)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_a814b")
-
 [node name="MainScene" type="Node2D"]
+
+[node name="puu" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(-17, 108)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAEAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_5crlr")
 
 [node name="yksittäinen pala" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -92,15 +99,9 @@ tile_map_data = PackedByteArray("AAACAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_hbc2u")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(14, -11)
+position = Vector2(351, 352)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(14, -11)
 anchor_mode = 0
 editor_draw_drag_margin = true
-
-[node name="puu" type="TileMapLayer" parent="."]
-texture_filter = 1
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAEAAEAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_5crlr")

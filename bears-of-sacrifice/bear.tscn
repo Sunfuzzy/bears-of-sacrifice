@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://v3o23vt2h6n4"]
+
+[ext_resource type="Texture2D" uid="uid://od2ubxpnn0kh" path="res://pixil-frame-0-2.png" id="1_wvk3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ceia"]
+size = Vector2(21, 28)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+texture_filter = 1
+position = Vector2(259, 329)
+texture = ExtResource("1_wvk3l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(258.5, 330)
+shape = SubResource("RectangleShape2D_8ceia")
