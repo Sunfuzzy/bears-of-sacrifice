@@ -1,35 +1,93 @@
-[gd_scene load_steps=7 format=3 uid="uid://mnh87oq4wjnn"]
 
-[ext_resource type="Script" uid="uid://bcjyyf6x1d1xb" path="res://MainScene.gd" id="1_rf2cd"]
-[ext_resource type="Script" uid="uid://se12v6d07rfn" path="res://Player.gd" id="3_rf2cd"]
-[ext_resource type="Script" uid="uid://c1ytm2a33rlx2" path="res://Goal.gd" id="4_5crlr"]
-[ext_resource type="Texture2D" uid="uid://djvycp26a381y" path="res://istockphoto-1135769825-612x612.jpg" id="5_hbc2u"]
-[ext_resource type="Script" uid="uid://b2fg0thaais8i" path="res://Camera2D.gd" id="5_rf2cd"]
+[gd_scene load_steps=13 format=4 uid="uid://mnh87oq4wjnn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_torvr"]
-size = Vector2(32, 32)
+[ext_resource type="Texture2D" uid="uid://ddux61dolqj7t" path="res://pixil-frame-0-22.png" id="1_uxrcv"]
+[ext_resource type="Texture2D" uid="uid://ctxlad7ge6jta" path="res://pixil-frame-0-25.png" id="2_rf2cd"]
+[ext_resource type="Texture2D" uid="uid://dpwbdfvb7u0s0" path="res://pixil-frame-0-26.png" id="3_a814b"]
+[ext_resource type="Texture2D" uid="uid://boy7jxxk8hi20" path="res://pixil-frame-0-27.png" id="4_5crlr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf2cd"]
+texture = ExtResource("4_5crlr")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_a814b"]
+tile_size = Vector2i(30, 30)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rf2cd")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4av3"]
+texture = ExtResource("1_uxrcv")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_rpqi1"]
+tile_size = Vector2i(30, 30)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_x4av3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxrcv"]
+texture = ExtResource("2_rf2cd")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_rf2cd"]
+tile_size = Vector2i(30, 30)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_uxrcv")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5crlr"]
+texture = ExtResource("3_a814b")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_hbc2u"]
+tile_size = Vector2i(30, 30)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5crlr")
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_rf2cd")
 
-[node name="Goal" type="Area2D" parent="."]
-position = Vector2(900, 480)
-script = ExtResource("4_5crlr")
+[node name="yksittäinen pala" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAIAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAADAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_a814b")
 
-[node name="Sprite2D" type="Sprite2D" parent="Goal"]
-texture = ExtResource("5_hbc2u")
+[node name="keski pala" type="TileMapLayer" parent="."]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(14, -11)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_rpqi1")
+rendering_quadrant_size = 30
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
-shape = SubResource("RectangleShape2D_torvr")
+[node name="oikea sivu" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(14, -11)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAALAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_rf2cd")
 
-[node name="Player1" type="CharacterBody2D" parent="."]
-position = Vector2(71.600006, 480.00012)
-script = ExtResource("3_rf2cd")
+[node name="vasen sivu" type="TileMapLayer" parent="."]
+position = Vector2(14, -11)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAACAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_hbc2u")
 
-[node name="Camera2D" type="Camera2D" parent="Player1"]
-position = Vector2(-64, -480)
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(14, -11)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(14, -11)
 anchor_mode = 0
 editor_draw_drag_margin = true
+
 script = ExtResource("5_rf2cd")
 
 [node name="Player2" type="CharacterBody2D" parent="."]
