@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="1 pelii"
-run/main_scene="uid://bcaqkfaajcuth"
+run/main_scene="uid://mnh87oq4wjnn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[display]window/size/viewport_width"=1024
+window/size/viewport_height=576
 
 [display]
 
