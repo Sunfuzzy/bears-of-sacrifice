@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://mnh87oq4wjnn"]
+[gd_scene load_steps=18 format=4 uid="uid://mnh87oq4wjnn"]
 
 [ext_resource type="Texture2D" uid="uid://ddux61dolqj7t" path="res://pixil-frame-0-22.png" id="1_uxrcv"]
 [ext_resource type="Texture2D" uid="uid://ctxlad7ge6jta" path="res://pixil-frame-0-25.png" id="2_rf2cd"]
 [ext_resource type="Texture2D" uid="uid://dpwbdfvb7u0s0" path="res://pixil-frame-0-26.png" id="3_a814b"]
 [ext_resource type="Texture2D" uid="uid://boy7jxxk8hi20" path="res://pixil-frame-0-27.png" id="4_5crlr"]
 [ext_resource type="Texture2D" uid="uid://djsi2ndh251pd" path="res://pixil-frame-0-3.png" id="5_rf2cd"]
+[ext_resource type="PackedScene" uid="uid://15040yjkjb0e" path="res://Goal.tscn" id="6_a814b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a814b"]
 texture = ExtResource("5_rf2cd")
@@ -61,6 +62,20 @@ tile_size = Vector2i(30, 30)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5crlr")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a814b"]
+texture = ExtResource("5_rf2cd")
+texture_region_size = Vector2i(60, 75)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -37.5, 30, -37.5, 30, 37.5, -30, 37.5)
+
+[sub_resource type="TileSet" id="TileSet_5crlr"]
+tile_size = Vector2i(60, 75)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_a814b")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5crlr"]
+size = Vector2(32, 32)
+
 [node name="MainScene" type="Node2D"]
 
 [node name="puu" type="TileMapLayer" parent="."]
@@ -105,3 +120,17 @@ position = Vector2(351, 352)
 position = Vector2(14, -11)
 anchor_mode = 0
 editor_draw_drag_margin = true
+
+[node name="puu" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAEAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_5crlr")
+
+[node name="Goal" parent="." instance=ExtResource("6_a814b")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Goal"]
+position = Vector2(717, 386)
+shape = SubResource("RectangleShape2D_5crlr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Goal"]
