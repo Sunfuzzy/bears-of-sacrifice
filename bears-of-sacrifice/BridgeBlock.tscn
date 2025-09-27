@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh2t2afel3nrg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_50bo4"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4tgj"]
+size = Vector2(32, 32)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BridgeBlock" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BridgeBlock"]
+modulate = Color(0.6627451, 0.6627451, 0.6627451, 1)
+texture = SubResource("PlaceholderTexture2D_50bo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BridgeBlock"]
+shape = SubResource("RectangleShape2D_n4tgj")
